@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>viagra</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    < ![endif]-->
+  </head>
+
+  <body onload="bodyLoad()">
+    <img src="images/v.jpg" id="img" alt="">
+    <img onclick="videoPlay(this)" src="images/click.png" class="click-img" alt="">
+    <video id="video"
+           src="images/vv.mp4"
+           preload="auto"
+           webkit-playsinline="true"
+           playsinline="true"
+           x-webkit-airplay="allow"
+           x5-video-player-type="h5"
+           x5-video-player-fullscreen="true"
+           style="object-fit:fill">
+    </video>
+
+    <script>
+      //动态设置video宽高
+      function bodyLoad() {
+          var video = document.getElementById('video');
+          var clickImg = document.getElementById('clickImg');
+          var width = window.screen.width;
+          var height =  window.screen.height;
+          video.style.width = width+'px';
+          video.style.height = height+'px';
+          document.getElementById('img').style.width = width+'px';
+          document.getElementById('img').style.height = height+'px';
+          video.style.display="none";
+      }
+      function videoPlay(that) {
+          video.style.display="block";
+          video.play();
+          that.style.display="none";
+          document.getElementById('img').style.display="none";
+      }
+      //微信自动播放
+//        document.addEventListener("WeixinJSBridgeReady", function (){
+//            video.play();
+//            video.pause();
+//        }, false);
+    </script>
+  </body>
+</html>
